@@ -10,6 +10,10 @@ import { HeadlessInferencer } from "@refinedev/inferencer/headless";
 import { Layout } from "./components/layout";
 
 import "./App.css";
+import { BlogPostList } from "pages/blog-posts/list";
+import { BlogPostEdit } from "pages/blog-posts/edit";
+import { BlogPostShow } from "pages/blog-posts/show";
+import { BlogPostCreate } from "pages/blog-posts/create";
 
 const App = () => {
     return (
@@ -41,18 +45,18 @@ const App = () => {
                     >
                         <Route index element={<NavigateToResource resource="blog_posts" />} />
                         <Route path="blog-posts">
-                            <Route index element={<HeadlessInferencer />} />
+                            <Route index element={<BlogPostList />} />
                             <Route
                                 path="show/:id"
-                                element={<HeadlessInferencer />}
+                                element={<BlogPostShow />}
                             />
                             <Route
                                 path="edit/:id"
-                                element={<HeadlessInferencer />}
+                                element={<BlogPostEdit />}
                             />
                             <Route
                                 path="create"
-                                element={<HeadlessInferencer />}
+                                element={<BlogPostCreate />}
                             />
                         </Route>
                     </Route>
